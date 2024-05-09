@@ -1,0 +1,67 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "configure gperftools",
+            "type": "shell",
+            "command": "/opt/gperftools/configure",
+            "args": [
+                "--prefix=/usr/local/lib/gperftools",
+                "--disable-dependency-tracking",
+                "--enable-frame-pointers",
+                "--with-pic",
+            ],
+            "options": {
+                "cwd": "/opt/gperftools/build"
+            },
+            "problemMatcher": [],
+            "detail": "configure gperftools"
+        },
+        {
+            "label": "compile gperftools",
+            "type": "shell",
+            "command": "compiledb",
+            "args": [
+                "make",
+                "-j4"
+            ],
+            "options": {
+                "cwd": "/opt/gperftools/build"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "compile gperftools"
+        },
+        {
+            "label": "install gperftools",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "install",
+            ],
+            "options": {
+                "cwd": "/opt/gperftools/build"
+            },
+            "problemMatcher": [],
+            "detail": "install gperftools"
+        },
+        {
+            "label": "distclean gperftools",
+            "type": "shell",
+            "command": "make",
+            "args": [
+                "distclean"
+            ],
+            "options": {
+                "cwd": "/opt/gperftools/build"
+            },
+            "problemMatcher": [],
+            "detail": "distclean gperftools"
+        }
+    ]
+}

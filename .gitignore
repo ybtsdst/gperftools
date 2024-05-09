@@ -145,3 +145,22 @@
 /thread_dealloc_unittest.exe
 /unwind_bench
 /unwind_bench.exe
+
+build
+.cache
+compile_commands.json
+
+# vscode files
+.vscode/*
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/settings.json
+!.vscode/*.code-snippets
+!.vscode/c_cpp_properties.json
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
