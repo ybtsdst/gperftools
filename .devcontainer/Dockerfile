@@ -4,7 +4,7 @@ RUN \
     echo 'Acquire::ForceIPv4 "true";' >> /etc/apt/apt.conf.d/1000-force-ipv4-transport && \
     apt-get update && \
     PKGS="curl git unzip wget zip locales sudo" && \
-    PKGS="${PKGS} build-essential ccache vim cmake" && \
+    PKGS="${PKGS} build-essential ccache vim cmake autoconf automake libtool bear" && \
     PKGS="${PKGS} linux-tools-common linux-tools-generic" && \
     PKGS="${PKGS} python3 python3-pip libunwind-dev" && \
     apt-get install -y ${PKGS} && \
